@@ -4555,6 +4555,7 @@ jQuery(document).ready(function ($) {
             });
     }
 
+    // Hide banner when it is past the conference date
     function getCompareDate() {
         var d = new Date(),
             month = '' + (d.getMonth() + 1),
@@ -4568,6 +4569,6 @@ jQuery(document).ready(function ($) {
     $('[future-date]').each(function() {
         console.log(getCompareDate());
         if($(this).attr('future-date') < getCompareDate())
-            $(this).hide();
+            $(this).remove();
     });
 });
